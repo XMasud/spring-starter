@@ -16,7 +16,14 @@ public class DepartmentRepository {
         return department;
     }
 
-    public List<Department> getDepartments() {
+    public List<Department> findAll() {
         return departments;
+    }
+
+    public Department getDepartmentById(Long id){
+        return departments.stream()
+                .filter(department -> department.getId().equals(id))
+                .findFirst()
+                .orElseThrow();
     }
 }
