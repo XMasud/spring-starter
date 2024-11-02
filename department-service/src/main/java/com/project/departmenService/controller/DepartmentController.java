@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/department")
 public class DepartmentController {
-
     private static final Logger LOG = LoggerFactory.getLogger(DepartmentController.class);
 
     @Autowired
@@ -25,6 +24,13 @@ public class DepartmentController {
 
     @GetMapping
     public List<Department> getDepartment (){
+        LOG.info("Find all");
         return departmentRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Department getDepartment (@PathVariable Long id){
+        LOG.info("Department find: id={}", id);
+        return departmentRepository.getDepartmentById(id);
     }
 }

@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Department {
+    public Department(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     private Long id;
     private String name;
     private final List<Employee> employees = new ArrayList<>();
+
+    public Department() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -28,4 +36,12 @@ public class Department {
         return employees;
     }
 
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", employees=" + employees +
+                '}';
+    }
 }
