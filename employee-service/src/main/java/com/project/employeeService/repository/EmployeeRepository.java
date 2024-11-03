@@ -28,4 +28,10 @@ public class EmployeeRepository {
     public List<Employee> getEmployees() {
         return employees;
     }
+
+    public List<Employee> findByDepartment(Long departmentId){
+        return employees.stream()
+                .filter(a -> a.departmentId().equals(departmentId))
+                .toList();
+    }
 }
