@@ -25,10 +25,12 @@ public class EmployeeRepository {
                 .orElseThrow();
     }
 
+    //List all emp
     public List<Employee> getEmployees() {
         return employees;
     }
 
+    //Find dep by Id
     public List<Employee> findByDepartment(Long departmentId){
         return employees.stream()
                 .filter(a -> a.departmentId().equals(departmentId))
