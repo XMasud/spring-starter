@@ -2,8 +2,6 @@ package com.project.employeeService.repository;
 
 import com.project.employeeService.model.Employee;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
